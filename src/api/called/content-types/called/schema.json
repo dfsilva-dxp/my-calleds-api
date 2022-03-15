@@ -4,17 +4,38 @@
   "info": {
     "singularName": "called",
     "pluralName": "calleds",
-    "displayName": "Called"
+    "displayName": "Called",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "number": {
+    "opened_by_name": {
       "type": "string",
+      "required": true
+    },
+    "opened_by_uid": {
+      "type": "string",
+      "required": true
+    },
+    "number": {
+      "type": "biginteger",
       "required": true,
       "unique": true
+    },
+    "uid": {
+      "type": "uid",
+      "targetField": "opened_by_uid"
+    },
+    "email": {
+      "type": "email",
+      "required": true
+    },
+    "phone_number": {
+      "type": "string",
+      "required": true
     },
     "short_description": {
       "type": "string",
@@ -23,20 +44,6 @@
     "description": {
       "type": "text",
       "required": true
-    },
-    "uid": {
-      "type": "uid",
-      "targetField": "number"
-    },
-    "attachment": {
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ],
-      "type": "media",
-      "multiple": true
     }
   }
 }
